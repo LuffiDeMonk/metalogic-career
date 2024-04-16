@@ -1,6 +1,7 @@
 import React from 'react'
 import TitleContainer from './TitleContainer'
 import VacancyForm from './VacancyForm'
+import SearchResults from './SearchResults'
 
 export default function Vacancy() {
     return (
@@ -13,6 +14,7 @@ export default function Vacancy() {
                 subheading='Oppurtunities'
             />
             <VacancyForm />
+            <SearchResults />
         </section>
     )
 }

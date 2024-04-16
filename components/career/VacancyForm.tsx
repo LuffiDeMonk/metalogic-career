@@ -11,6 +11,8 @@ import { IVacancyValidation, VacancyValidation } from '@/constants/form/VacancyV
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { search_data } from '@/constants/SearchOption'
 import { usePathname, useSearchParams, useRouter } from 'next/navigation'
+import { MotionDiv } from '../common/MotionComponent'
+import { MainAnimation } from '@/constants/animation/variants'
 
 export default function VacancyForm() {
     const path = usePathname()
@@ -32,7 +34,7 @@ export default function VacancyForm() {
 
     }
     return (
-        <div className='flex flex-col gap-2 items-center justify-center max-w-4xl mx-auto mt-2 px-4'>
+        <MotionDiv variants={MainAnimation} initial='initial' whileInView='whileInView' viewport={{ once: true }} className='flex flex-col gap-2 items-center justify-center max-w-4xl mx-auto mt-2 px-4'>
             <Form
                 {...form}
             >
@@ -49,8 +51,8 @@ export default function VacancyForm() {
                             </FormItem>
                         )}
                     />
-                    <div className="flex items-center gap-2">
-                        <div className="w-[90%]">
+                    <div className="flex flex-col md:flex-row items-center gap-2">
+                        <div className="w-full md:w-[90%]">
 
                             <FormField
                                 control={form.control}
@@ -81,12 +83,12 @@ export default function VacancyForm() {
                         </div>
 
 
-                        <Button className='w-[10%]'>
+                        <Button className='w-full md:w-[10%]'>
                             <MagnifyingGlassIcon className='text-3xl' />
                         </Button>
                     </div>
                 </form>
             </Form>
-        </div>
+        </MotionDiv>
     )
 }

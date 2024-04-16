@@ -3,7 +3,7 @@ import { z } from "zod";
 export const VacancyValidation = z.object(
     {
         title: z.string(),
-        level: z.string().optional()
+        level: z.string()
     }
 )
 

@@ -23,3 +23,8 @@ type TitleContainerProps = {
     subheading: string,
     description?: string
 }
+
+type FooterLinksProps = {
+    title: string,
+    links: Array<string>
+}

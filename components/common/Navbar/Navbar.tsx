@@ -3,6 +3,7 @@ import Logo from './Logo'
 import { Button } from '@/components/ui/button'
 import Navlinks from './Navlinks'
 import NavAnimation from './NavAnimation'
+import MobileNavigation from './MobileNavigation'
 
 
 
@@ -13,6 +14,9 @@ export default function Navbar() {
                 <Logo />
                 <Navlinks />
                 <Button className='hidden lg:block'>Get in Touch</Button>
+                <div className="block lg:hidden">
+                    <MobileNavigation />
+                </div>
             </nav>
         </NavAnimation>
     )

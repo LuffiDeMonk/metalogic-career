@@ -33,7 +33,7 @@ export default function NavAnimation({ children, className }: { children: React.
             variants={variants}
             animate={hide ? 'visible' : 'hidden'}
             transition={{ ease: 'easeInOut' }}
-            className={cn(className, `fixed top-0 z-[999] w-full backdrop-blur-lg`)}
+            className={cn(className, `fixed top-0 z-[998] w-full backdrop-blur-lg`)}
         >
             {children}
         </MotionSection>

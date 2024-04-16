@@ -4,6 +4,7 @@ import Rocket from './Rocket'
 import { Button } from '../ui/button'
 import { MotionDiv } from '../common/MotionComponent'
 import { MainAnimation } from '@/constants/animation/variants'
+import Link from 'next/link'
 
 export default function Banner() {
     return (
@@ -17,12 +18,14 @@ export default function Banner() {
                             <h1 className='text-4xl lg:text-6xl text-center font-bold py-12'>Navigate Your Next <br /> <span className='text-green-600'>Career</span> Move</h1>
                             <MotionDiv variants={MainAnimation} className='mx-auto md:w-1/2 px-4 lg:px-48 pb-12 text-center'>{`We're continiously searching for the right talent. Check if you're a good match.`}</MotionDiv>
                             <MotionDiv variants={MainAnimation}>
-                                <Button
-                                    variant='destructive'
-                                    size='lg'
-                                >
-                                    Explore Oppurtunities
-                                </Button>
+                                <Link href="#vacancy">
+                                    <Button
+                                        variant='destructive'
+                                        size='lg'
+                                    >
+                                        Explore Oppurtunities
+                                    </Button>
+                                </Link>
                             </MotionDiv>
                         </MotionDiv>
                     </div>

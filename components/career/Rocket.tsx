@@ -1,6 +1,7 @@
 import React from 'react'
 import { MotionDiv } from '../common/MotionComponent'
 import { Variants } from 'framer-motion'
+import styles from './rocket.module.css'
 
 const variants: Variants = {
     hidden: {
@@ -17,21 +18,21 @@ const variants: Variants = {
 
 export default function Rocket() {
     return (
-        <div className="rocket">
+        <div className={styles.rocket}>
             <MotionDiv
                 variants={variants}
                 initial='hidden'
                 animate='animate'
             >
-                <div className="rocket-body">
-                    <div className="body"></div>
+                <div className={styles.rocket_body}>
+                    <div className={styles.body}></div>
                     <p className='absolute rotate-[270deg] bottom-10 left-6 text-xs'>Metalogic</p>
-                    <div className="fin fin-left bg-orange-500"></div>
-                    <div className="fin fin-right bg-orange-500"></div>
-                    <div className="window bg-orange-500"></div>
+                    <div className={`${styles.fin} ${styles.fin_left} bg-orange-500`}></div>
+                    <div className={`${styles.fin} ${styles.fin_right} bg-orange-500`}></div>
+                    <div className={`${styles.window} bg-orange-500`}></div>
                 </div>
-                <div className="exhaust-flame"></div>
-                <ul className="exhaust-fumes overflow-hidden">
+                <div className={styles.exhaust_flame}></div>
+                <ul className={`${styles.exhaust_fumes} overflow-hidden`}>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -44,7 +45,7 @@ export default function Rocket() {
                 </ul>
             </MotionDiv>
             <div className='overflow-hidden'>
-                <ul className="exhaust-fumes">
+                <ul className={styles.exhaust_fumes}>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -56,7 +57,7 @@ export default function Rocket() {
                     <li></li>
                 </ul>
             </div>
-            <ul className="star">
+            <ul className={styles.star}>
                 <li></li>
                 <li></li>
                 <li></li>

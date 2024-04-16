@@ -10,12 +10,27 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { IVacancyValidation, VacancyValidation } from '@/constants/form/VacancyValidation'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { search_data } from '@/constants/SearchOption'
+import { usePathname, useSearchParams, useRouter } from 'next/navigation'
 
 export default function VacancyForm() {
+    const path = usePathname()
+    const searchParams = useSearchParams()
+    const { replace } = useRouter()
     const form = useForm<IVacancyValidation>({
-        resolver: zodResolver(VacancyValidation)
+        resolver: zodResolver(VacancyValidation),
+        defaultValues: {
+            title: searchParams?.get('title') || '',
+            level: searchParams?.get('level') || ''
+        }
     })
-    const onSubmit = (data: IVacancyValidation) => { alert(data.title) }
+    const onSubmit = (data: IVacancyValidation) => {
+        const params = new URLSearchParams(searchParams)
+        params.set('title', data.title)
+        params.set('level', data.level as string)
+
+        replace(`${path}?${params.toString()}`, { scroll: false })
+
+    }
     return (
         <div className='flex flex-col gap-2 items-center justify-center max-w-4xl mx-auto mt-2 px-4'>
             <Form

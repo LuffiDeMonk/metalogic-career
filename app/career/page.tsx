@@ -3,7 +3,7 @@ import Benefits from '@/components/career/Benefits'
 import Cares from '@/components/career/Cares'
 import Vacancy from '@/components/career/Vacancy'
 import Values from '@/components/career/Values'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 export default function Career() {
     return (
@@ -12,7 +12,9 @@ export default function Career() {
             <Values />
             <Benefits />
             <Cares />
-            <Vacancy />
+            <Suspense>
+                <Vacancy />
+            </Suspense>
         </>
     )
 }
